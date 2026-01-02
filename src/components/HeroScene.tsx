@@ -6,7 +6,7 @@ const HeroScene = () => {
   return (
     <div className="absolute inset-0 w-full h-full">
       <Canvas
-        camera={{ position: [0, 0.5, 7], fov: 45 }}
+        camera={{ position: [0, 1, 8], fov: 45 }}
         dpr={[1, 2]}
         style={{ background: "transparent" }}
       >
@@ -23,47 +23,34 @@ const HeroScene = () => {
           color="#dc2626"
         />
 
-        {/* Left Figure - Smaller and faded */}
-        <group position={[-3.5, -0.3, -1]} scale={0.7}>
-          <FunkoFigure
-            position={[0, 0, 0]}
-            color="#f5d0c5"
-            accentColor="#dc2626"
-            rotationSpeed={0.004}
-            floatOffset={0}
-            opacity={0.5}
-          />
-        </group>
-
-        {/* Center Figure - Main, larger and prominent */}
-        <group position={[0, 0, 1]} scale={1}>
-          <FunkoFigure
-            position={[0, 0, 0]}
-            color="#e8d4c4"
-            accentColor="#1a1a1a"
-            rotationSpeed={0.005}
-            floatOffset={2}
-            opacity={1}
-          />
-        </group>
-
-        {/* Right Figure - Smaller and faded */}
-        <group position={[3.5, -0.3, -1]} scale={0.7}>
-          <FunkoFigure
-            position={[0, 0, 0]}
-            color="#d4a574"
-            accentColor="#dc2626"
-            rotationSpeed={0.004}
-            floatOffset={4}
-            opacity={0.5}
-          />
-        </group>
+        {/* 3 Funko Figures */}
+        <FunkoFigure
+          position={[-2.5, 0, 0]}
+          color="#f5d0c5"
+          accentColor="#dc2626"
+          rotationSpeed={0.003}
+          floatOffset={0}
+        />
+        <FunkoFigure
+          position={[0, 0.3, 1]}
+          color="#e8d4c4"
+          accentColor="#1a1a1a"
+          rotationSpeed={0.004}
+          floatOffset={2}
+        />
+        <FunkoFigure
+          position={[2.5, 0, 0]}
+          color="#d4a574"
+          accentColor="#dc2626"
+          rotationSpeed={0.003}
+          floatOffset={4}
+        />
 
         {/* Ground shadow */}
         <ContactShadows
           position={[0, -1.8, 0]}
           opacity={0.6}
-          scale={15}
+          scale={12}
           blur={2.5}
           far={4}
           color="#000000"
@@ -72,14 +59,14 @@ const HeroScene = () => {
         {/* Environment for reflections */}
         <Environment preset="city" />
 
-        {/* Camera controls - horizontal only */}
+        {/* Camera controls */}
         <OrbitControls
           enableZoom={false}
           enablePan={false}
-          minPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 3}
           maxPolarAngle={Math.PI / 2}
           autoRotate
-          autoRotateSpeed={0.3}
+          autoRotateSpeed={0.5}
         />
       </Canvas>
     </div>
