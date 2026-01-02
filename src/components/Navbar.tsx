@@ -12,9 +12,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <nav className="fixed top-4 left-4 right-4 z-50 bg-background/80 backdrop-blur-md border border-border rounded-full">
+      <div className="px-6 md:px-8">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Left Section - Logo & Nav Links */}
           <div className="flex items-center gap-8">
             {/* Logo */}
